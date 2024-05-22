@@ -1,0 +1,6 @@
+framework module RTCControlLink {
+  umbrella header "RTCControlLink.h"
+  export *
+
+  module * { export * }
+}
