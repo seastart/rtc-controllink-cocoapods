@@ -9,18 +9,14 @@
 #import <Foundation/Foundation.h>
 
 #if __has_include(<RTCControlLink/RTCControlLink.h>)
-#import <RTCControlLink/RTCControlLinkDefine.h>
-#import <RTCControlLink/RTCControlLinkObjects.h>
 #import <RTCControlLink/RTCControlLinkDelegate.h>
 #else
-#import "RTCControlLinkDefine.h"
-#import "RTCControlLinkObjects.h"
 #import "RTCControlLinkDelegate.h"
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - RTCControlLink
+#pragma mark - 通用集控引擎
 @interface RTCControlLink : NSObject
 
 + (instancetype)new __attribute__((unavailable("use sharedInstance instead.")));
@@ -28,11 +24,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark - ------------ 核心基础接口 ------------
-#pragma mark 创建 RTCControlLink 实例
-/// 创建 RTCControlLink 实例
+#pragma mark 创建集控引擎实例
+/// 创建集控引擎实例
 + (RTCControlLink *)sharedInstance;
 
+#pragma mark 集控引擎版本
+///  集控引擎版本
+- (NSString *)version;
 
+#pragma mark 初始化集控引擎
+/// 初始化集控引擎
+/// @param delegate 代理回调
+- (BOOL)initializeWithDelegate:(nullable id <RTCControlLinkDelegate>)delegate;
+
+#pragma mark 销毁集控引擎实例
+/// 销毁集控引擎实例
+- (void)destroyInstance;
 
 @end
 
