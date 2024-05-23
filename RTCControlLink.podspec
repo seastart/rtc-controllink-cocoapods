@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint RTCControlLinker.podspec' to ensure this is a
+# Be sure to run `pod lib lint RTCControlLink.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'RTCControlLinker'
+  s.name             = 'RTCControlLink'
   s.version          = '0.1.0'
   s.summary          = '通用集控引擎.'
 
@@ -32,7 +32,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '10.0'
 
   # 依赖本地库
-  s.vendored_frameworks = 'RTCControlLinker/*.framework'
+  s.vendored_frameworks = 'RTCControlLink/*.framework'
   # 依赖远程Socket组件库
   s.dependency 'CocoaAsyncSocket'
 end
